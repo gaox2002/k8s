@@ -1,13 +1,21 @@
 apiVersion: apps/v1
-kind: Pod
+kind: Deployment
 metadata:
   name: api-pod
   labels:
     app: hello
 spec:
-  containers:
-    - name: hello
-      image: hello:rasp
-      imagePullPolicy: Never
-      ports:
-        - containerPort: 80
+  selector:
+    matchLabels:
+      app: hello
+  template:
+    metadata:
+      labels:
+        app: hello
+    spec:
+      containers:
+        - name: hello
+          image: hello:rasp
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 80
