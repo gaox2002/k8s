@@ -1,0 +1,13 @@
+apiVersion: apps/v1
+kind: Pod
+metadata:
+  name: api-pod
+  labels:
+    app: hello
+spec:
+  containers:
+    - name: hello
+      image: hello:rasp
+      imagePullPolicy: Never
+      ports:
+        - containerPort: 80
