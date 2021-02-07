@@ -16,5 +16,6 @@ spec:
     spec:
       containers:
         - name: helloapi
-          image: hello:rasp
-          imagePullPolicy: Never
+          image: 192.168.0.155:32000/hello:rasp
+          ports:
+            - containerPort: 80
