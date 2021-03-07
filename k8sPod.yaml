@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
         - name: helloapi
-          image: 192.168.0.155:32000/hello:rasp
+          image: localhost:32000/xg:k8s
           ports:
             - containerPort: 80
